@@ -31,13 +31,13 @@ document.addEventListener("DOMContentLoaded", () => {
               .map(
                 (participant) => `
                   <li class="participant-item">
-                    <span class="participant-name">${participant}</span>
+                    <span class="participant-name">${escapeHtml(participant)}</span>
                     <button
                       type="button"
                       class="participant-remove"
-                      data-activity="${name}"
-                      data-participant="${participant}"
-                      aria-label="Remove ${participant} from ${name}"
+                      data-activity="${encodeURIComponent(name)}"
+                      data-participant="${encodeURIComponent(participant)}"
+                      aria-label="Remove participant"
                       title="Remove participant"
                     >
                       ×
