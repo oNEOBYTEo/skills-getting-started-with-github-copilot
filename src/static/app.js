@@ -16,6 +16,14 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function renderActivities() {
+    const escapeHtml = (value) =>
+      String(value)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#39;");
+
     activitiesList.innerHTML = "";
     activitySelect.innerHTML = '<option value="">-- Select an activity --</option>';
 
