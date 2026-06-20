@@ -84,8 +84,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   async function handleParticipantRemoval(event) {
     const button = event.currentTarget;
-    const activity = button.dataset.activity;
-    const participant = button.dataset.participant;
+    const activity = decodeURIComponent(button.dataset.activity);
+    const participant = decodeURIComponent(button.dataset.participant);
 
     try {
       const response = await fetch(
